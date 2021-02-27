@@ -13,11 +13,20 @@ from dash_flask_login import FlaskLoginAuth
 
 # Setup the Flask server
 server = Flask(__name__)
+app.config.suppress_callback_exceptions = True
+#config the server to interact with the database
+#Secret Key is used for user sessions
+server.config.update(
+    SECRET_KEY=os.urandom(12),
+    SQLALCHEMY_DATABASE_URI='postgresql://postgres/13579246@localhost/digest-africa-db',
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+)
+db.init_app(server)
 
 # config
-server.config.update(
-    SECRET_KEY = os.urandom(12),
-)
+# server.config.update(
+#     SECRET_KEY = os.urandom(12),
+# )
 
 # Setup the LoginManager for the server
 login_manager = LoginManager()
