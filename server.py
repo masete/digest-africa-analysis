@@ -18,7 +18,8 @@ app.config.suppress_callback_exceptions = True
 #Secret Key is used for user sessions
 server.config.update(
     SECRET_KEY=os.urandom(12),
-    SQLALCHEMY_DATABASE_URI='postgresql://postgres/13579246@localhost/digest-africa-db',
+    SQLALCHEMY_DATABASE_URI='postgres://ymzgbzaoueezqo:7165a1f63de0e295e496302822684853a5914b'
+                            'ef93a0319b8f5d6dc5df4595a9@ec2-54-196-111-158.compute-1.amazonaws.com:5432/d45ndhrceblt7r',
     SQLALCHEMY_TRACK_MODIFICATIONS=False
 )
 db.init_app(server)
@@ -171,6 +172,7 @@ def login():
             return redirect('/login')
     else:
         return redirect('/login')
+
 
 # Run the server
 if __name__ == '__main__':

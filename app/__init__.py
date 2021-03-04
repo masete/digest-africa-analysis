@@ -10,6 +10,7 @@ from flask_bootstrap import Bootstrap
 
 """Create Flask Application"""
 app = Flask(__name__)
+server = app.server
 login = LoginManager(app)
 login.login_view = 'login'
 app.config.from_object(Config)
