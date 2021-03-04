@@ -9,8 +9,6 @@ from dash import Dash
 from dash_flask_login import FlaskLoginAuth
 
 
-
-
 # Setup the Flask server
 server = Flask(__name__)
 app.config.suppress_callback_exceptions = True
